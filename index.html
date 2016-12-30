@@ -6,28 +6,19 @@
     <meta charset="utf-8" />
     <link type="text/css" rel="stylesheet" href="style.css" />
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="quotes.js"></script>
 </head>
-
-<script>
-    $(document).ready(function() {
-        $("#getQuote").on("click", function() {
-            $.getJSON("http://api.forismatic.com/api/1.0/?method=getQuote&format=json&lang=en", function(json) {
-                var html = "";
-                html += "<div class='quoteMessage'>" + json.quoteText + "</div>" + "<br>";
-                html += "<div class='quoteAuthor'> - " + json.quoteAuthor + "</div>";
-                $(".quote").html(JSON.stringify(json));
-                $(".quote").html(html);
-            });
-        });
-    });
-</script>
 
 <body>
     <h1>Random Quote Generator</h1>
     <div class="quote">
-        Quote will go here
+        Quote will go here.
     </div>
-    <button id="getQuote">Get Quote</button>
+    <div class="buttons">
+        <button id="getQuote">New Quote</button>
+        <button id="tweet">Tweet</button>
+    </div>
+
 </body>
 
 </html>
