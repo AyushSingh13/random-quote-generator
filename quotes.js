@@ -4,13 +4,21 @@
 */
 
 function populateQuote() {
-    var api = "http://api.forismatic.com/api/1.0/?method=getQuote&format=json&lang=en";
+    var api = "https://andruxnet-random-famous-quotes.p.mashape.com/?cat=";
     $.ajax(api, {
+        headers: {
+            "X-Mashape-Key": "2YzL9EPxnNmshf2N5ev9g4pwYRuRp1tYtubjsn4KOXHKylw9Vw",
+            "Accept": "application/json",
+            "Content-Type": "application/x-www-form-urlencoded"
+        },
         success: function(json) {
+            var r = JSON.parse(json);
+            var quote = r.quote;
+            var author = r.author;
             var html = "";
-            html += '<div class="quoteMessage">"' + json.quoteText + '"</div><br>';
-            html += "<div class='quoteAuthor'> - " + json.quoteAuthor + "</div><br>";
-            setTweetButton(json.quoteText, json.quoteAuthor);
+            html += '<div class="quoteMessage">"' + quote + '"</div><br>';
+            html += "<div class='quoteAuthor'> - " + author + "</div><br>";
+            setTweetButton(json.quote, json.author);
             $(".quote").html(html);
         },
         error: function() {
