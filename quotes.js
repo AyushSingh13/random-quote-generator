@@ -18,7 +18,7 @@ function populateQuote() {
             var html = "";
             html += '<div class="quoteMessage">"' + quote + '"</div><br>';
             html += "<div class='quoteAuthor'> - " + author + "</div><br>";
-            setTweetButton(json.quote, json.author);
+            setTweetButton(quote, author);
             $(".quote").html(html);
         },
         error: function() {
