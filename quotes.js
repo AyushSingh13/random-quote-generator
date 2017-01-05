@@ -19,7 +19,14 @@ function populateQuote() {
             html += '<div class="quoteMessage">"' + quote + '"</div><br>';
             html += "<div class='quoteAuthor'> - " + author + "</div><br>";
             setTweetButton(quote, author);
-            $(".quote").html(html);
+            $(".quote").animate({
+                opacity: 0
+            }, 500, function() {
+                $(this).animate({
+                    opacity: 1
+                }, 500);
+                $(this).html(html);
+            });
         },
         error: function() {
             error = "<div>Error in retrieving information from API</div>";
@@ -36,7 +43,5 @@ function setTweetButton(quote, author) {
 
 $(document).ready(function() {
     populateQuote();
-    $("#newQuote").on("click", function() {
-        populateQuote();
-    });
+    $("#newQuote").on("click", populateQuote);
 });

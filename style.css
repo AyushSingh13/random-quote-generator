@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Homemade+Apple|Merriweather');
+@import url('https://fonts.googleapis.com/css?family=Homemade+Apple|Roboto:100,300,400');
 
 body {
     display: -webkit-flex;
@@ -14,9 +14,9 @@ body {
 }
 
 .quote {
-    font-family: 'Homemade Apple';
-    font-weight: 600;
-    font-size: 1.5em;
+    font-family: 'Roboto';
+    font-weight: 100;
+    font-size: 3em;
     text-align: center;
 }
 
@@ -27,11 +27,12 @@ body {
 }
 
 .button {
-    font-family: 'Merriweather';
+    font-family: 'Roboto';
+    font-weight: 400;
     color: black;
     text-decoration: none;
     padding: 10px;
-    border-radius: 25px;
+    cursor: pointer;
 }
 
 #newQuote:hover {
