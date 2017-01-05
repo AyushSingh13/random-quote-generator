@@ -10,13 +10,14 @@ body {
 
 .container {
     max-width: 50%;
+    vertical-align: middle;
     align-self: center;
 }
 
 .quote {
     font-family: 'Roboto';
     font-weight: 100;
-    font-size: 3em;
+    font-size: 2em;
     text-align: center;
 }
 

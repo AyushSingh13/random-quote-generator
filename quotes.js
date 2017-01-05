@@ -16,7 +16,7 @@ function populateQuote() {
             var quote = r.quote;
             var author = r.author;
             var html = "";
-            html += '<div class="quoteMessage">"' + quote + '"</div><br>';
+            html += '<div class="quoteMessage"><em>"' + quote + '"</em></div><br>';
             html += "<div class='quoteAuthor'> - " + author + "</div><br>";
             setTweetButton(quote, author);
             $(".quote").animate({
