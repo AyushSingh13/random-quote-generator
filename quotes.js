@@ -12,7 +12,8 @@ function populateQuote() {
             "Content-Type": "application/x-www-form-urlencoded"
         },
         success: function(json) {
-            var r = JSON.parse(json);
+            // var r = JSON.parse(json);
+            r = json;
             var quote = r.quote;
             var author = r.author;
             var html = "";
